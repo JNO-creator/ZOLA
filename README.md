@@ -1,304 +1,321 @@
-  .navbar {
-    background-color: #e1705d;
-    overflow: hidden;
-    text-align: center;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+<html lang="fi">
+  <head>
+    <!-- Meta tags and styles should be placed here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self-Help-You</title>
+    <style>
+      /* Reset default margin and padding */
+      body, html {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
 
-  .navbar a {
-    display: inline-block;
-    padding: 14px 20px;
-    text-decoration: none;
-    color: white;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-  }
+      /* Styling the navigation bar */
+      .navbar {
+        background-color: #e1705d; /* Red background color */
+        overflow: hidden; /* Ensures the content is contained within the navbar */
+        text-align: center; /* Centers the links */
+      }
 
-  .navbar a:hover {
-    background-color: #ddd;
-    color: black;
-  }
+      /* Styling each link inside the navbar */
+      .navbar a {
+        display: inline-block; /* Display links horizontally */
+        padding: 14px 20px; /* Padding inside each link */
+        text-decoration: none; /* Removes underline from links */
+        color: white; /* White text color */
+        font-size: 16px; /* Adjusted font size */
+        transition: background-color 0.3s ease; /* Smooth transition for background color change */
+      }
 
-  .navbar a.active {
-    background-color: #0e194d;
-    color: white;
-  }
+      /* Hover effect for the links */
+      .navbar a:hover {
+        background-color: #ddd; /* Light background when hovered */
+        color: black; /* Change text color when hovered */
+      }
 
-  .navbar .icon {
-    display: none;
-    font-size: 27px;
-    color: white;
-    padding: 14px 20px;
-    background-color: #0e194d;
-    cursor: pointer;
-    z-index: 2;
-  }
+      /* Active link styling (when a link is clicked or active) */
+      .navbar a.active {
+        background-color: #0e194d; /* Blue background for active link */
+        color: white; /* Keep text white for active link */
+      }
 
-  @media screen and (max-width: 600px) {
-    .navbar a {
-      display: none;
-      width: 100%;
-      text-align: left;
-      padding: 14px;
-    }
-    .navbar .icon {
-      display: block;
-    }
-    .navbar.responsive a {
-      display: block;
-    }
-    .navbar.responsive .icon {
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-  }
+      /* Hamburger menu icon styling */
+      .navbar .icon {
+        display: none;
+        font-size: 27px;
+        color: white;
+        padding: 14px 20px;
+        background-color: #0e194d;
+        cursor: pointer;
+        z-index: 2;
+      }
 
-  .header {
-    background-color: #0e194d;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .header h1 {
-    display: inline-block;
-    font-size: 27px;
-    white-space: nowrap;
-    animation: rollText 10s linear infinite;
-    position: relative;
-    z-index: 2;
-  }
+      /* For small screens (mobile devices) */
+      @media screen and (max-width: 600px) {
+        .navbar a {
+          display: none; /* Hide the links by default */
+          width: 100%; /* Make the links take full width */
+          text-align: left; /* Align links to the left */
+          padding: 14px; /* Adjust padding for the links */
+        }
 
-  @keyframes rollText {
-    10% {
-      transform: translateX(100%);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
-  }
+        /* Display the hamburger icon */
+        .navbar .icon {
+          display: block;
+        }
 
-  .intro-text {
-    text-align: center;
-    padding: 40px;
-    background-color: #f0f0f0;
-    margin-top: 20px;
-  }
+        /* When the hamburger icon is clicked, show the links */
+        .navbar.responsive a {
+          display: block;
+        }
 
-  .intro-text h2 {
-    font-size: 24px;
-    color: #0e194d;
-  }
+        .navbar.responsive .icon {
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
+      }
 
-  .intro-text p {
-    font-size: 14px;
-    color: #0e194d;
-  }
+      /* Styling for the header with rolling text effect */
+      .header {
+        background-color: #0e194d;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
 
-  .box-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 10px;
-    margin-top: 40px;
-  }
+      /* Rolling text effect */
+      .header h1 {
+        display: inline-block;
+        font-size: 27px;
+        white-space: nowrap; /* Prevent the title from wrapping */
+        animation: rollText 10s linear infinite; /* Apply animation to roll the text */
+        position: relative;
+        z-index: 2;
+      }
 
-  .box {
-    background-color: #38B6FF;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3), -2px -2px 5px rgba(92, 97, 102, 0.5);
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-    text-align: center;
-    overflow-wrap: break-word;
-  }
+      /* Keyframes for rolling text animation */
+      @keyframes rollText {
+        10% {
+          transform: translateX(100%); /* Start off to the right */
+        }
+        100% {
+          transform: translateX(-100%); /* End off to the left */
+        }
+      }
 
-  .box-header {
-    padding: 10px 0;
-    text-align: center;
-  }
+      /* New Text Section */
+      .intro-text {
+        text-align: center;
+        padding: 40px;
+        background-color: #f0f0f0; /* Light grey background */
+        margin-top: 20px; /* Add some spacing from the header */
+      }
 
-  .box-content {
-    padding: 10px;
-    text-align: center;
-  }
+      .intro-text h2 {
+        font-size: 24px;
+        color: #0e194d; /* Blue color for the title */
+      }
 
-  .box-footer {
-    padding: 10px;
-    text-align: center;
-  }
+      .intro-text p {
+        font-size: 14px;
+        color: #0e194d; /* Blue color for the paragraph text */
+      }
 
-  .box h3 {
-    margin: 0;
-    font-size: 24px;
-    color: #0e194d;
-  }
+      /* Box Container */
+      .box-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 10px;
+        margin-top: 40px;
+      }
 
-  .box p {
-    font-size: 14px;
-    color: #0e194d;
-  }
+      /* Box Styles */
+      .box {
+        background-color: #38B6FF;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3), -2px -2px 5px rgba(92, 97, 102, 0.5);
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        transition: transform 0.3s ease;
+        text-align: center;
+        overflow-wrap: break-word; /* Prevent overflow of long words */
+      }
 
-  .box-footer a {
-    text-decoration: none;
-    background-color: #0e194d;
-    padding: 10px 15px;
-    color: white;
-    border-radius: 5px;
-    display: inline-block;
-  }
+      /* Separate header, content, and footer sections */
+      .box-header {
+        padding: 10px 0;
+        text-align: center;
+      }
 
-  .box:hover {
-    transform: translateY(-10px);
-  }
+      .box-content {
+        padding: 10px;
+        text-align: center;
+      }
 
-  footer {
-    text-align: center;
-    padding: 0;
-    background-color: #0e194d;
-    color: white;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-  }
+      .box-footer {
+        padding: 10px;
+        text-align: center;
+      }
 
-  footer .footer-section {
-    width: 100%;
-  }
+      /* Title and text styles inside the box */
+      .box h3 {
+        margin: 0;
+        font-size: 24px;
+        color: #0e194d;
+      }
 
-  footer h4, footer a, footer p {
-    margin: 0;
-    padding: 0 8px;
-    font-size: 16px;
-    line-height: 1.2;
-    vertical-align: middle;
-  }
+      .box p {
+        font-size: 14px;
+        color: #0e194d;
+      }
 
-  footer a {
-    text-decoration: none;
-    color: white;
-    font-size: 16px;
-    margin: 0 15px;
-    transition: color 0.3s ease;
-  }
+      .box-footer a {
+        text-decoration: none;
+        background-color: #0e194d;
+        padding: 10px 15px;
+        color: white;
+        border-radius: 5px;
+        display: inline-block; /* Make the link behave like a button */
+      }
 
-  footer a:hover {
-    color: #FF5733;
-  }
+      /* Hover effect */
+      .box:hover {
+        transform: translateY(-10px);
+      }
 
-  footer a:visited {
-    color: #8E44AD;
-  }
+      footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #0e194d;
+        color: white;
+      }
 
-  .footer-bottom {
-    display: none; /* Hide the separate bottom section, as everything fits in one line now */
-  }
+      footer a {
+        text-decoration: none;
+        color: white;
+        font-size: 16px;
+        margin: 0 15px;
+        transition: color 0.3s ease;
+      }
 
-  section {
-    padding-bottom: 40px;
-  }
-</style>
-KotiMeistäYritysPalvelutKoulutus
-<!-- Header with rolling text effect -->
-<div class="header">
-  <h1>Self-Help-You</h1>
-</div>
+      footer a:hover {
+        color: #FF5733; /* Color when hovered (e.g., light orange) */
+      }
 
-<!-- New Section with Grey Background and Title/Text -->
-<div class="intro-text">
-  <h2>- osana pienyrityksien Tulevaisuuden Suunnittelua</h2>
-</div>
+      footer a:visited {
+        color: #8E44AD; /* Purple color after the link is visited */
+      }
 
-<!-- Main Content -->
-<section>
-  <div class="box-container">
-    <!-- Box Components -->
-    <div class="box">
-      <div class="box-header">
-        <h3>Meistä</h3>
-      </div>
-      <div class="box-content">
-        <p>Lue lisää meistä ja referensseistämme.</p>
-      </div>
-      <div class="box-footer">
-        <a href="/Meista">Lue lisää</a>
-      </div>
+      /* Footer Bottom */
+      .footer-bottom {
+        padding-top: 10px;
+      }
+
+      /* Add space between the last box and footer */
+      section {
+        padding-bottom: 40px; /* Space between content and footer */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Top Navigation Bar placed before the header -->
+    <div class="navbar" id="myNavbar">
+      <a href="#home" class="active">Koti</a>
+      <a href="/Meista">Meistä</a>
+      <a href="/Yritys">Yritys</a>
+      <a href="/Palvelut">Palvelut</a>
+      <a href="/Koulutus">Koulutus</a>
+
+      <!-- Hamburger Icon -->
+      <a href="javascript:void(0);" class="icon" onclick="toggleNavbar()">&#9776;</a>
     </div>
 
-    <div class="box">
-      <div class="box-header">
-        <h3>Yritys</h3>
-      </div>
-      <div class="box-content">
-        <p>Tutustu yritykseemme sekä henkilökuntaamme.</p>
-      </div>
-      <div class="box-footer">
-        <a href="/Yritys">Tutustu</a>
-      </div>
+    <!-- Header with rolling text effect -->
+    <div class="header">
+      <h1>Self-Help-You</h1>
     </div>
 
-    <div class="box">
-      <div class="box-header">
-        <h3>Palvelut</h3>
-      </div>
-      <div class="box-content">
-        <p>Kuinka voimme auttaa Sinua ja yritystoimintaasi tulevaisuuden suunnittelussa.</p>
-      </div>
-      <div class="box-footer">
-        <a href="/Palvelut">Katso tästä</a>
-      </div>
+    <!-- New Section with Grey Background and Title/Text -->
+    <div class="intro-text">
+      <h2>- osana pienyrityksien Tulevaisuuden Suunnittelua</h2>
     </div>
 
-    <div class="box">
-      <div class="box-header">
-        <h3>Koulutus</h3>
-      </div>
-      <div class="box-content">
-        <p>Monipuoliset ja monimuotoiset koulutukset räätälöity Sinun yritystarpeillesi.</p>
-      </div>
-      <div class="box-footer">
-    <a href="/Koulutus">Lue lisää</a>
-  </div>
-</section>
+    <!-- Main Content -->
+    <section>
+      <div class="box-container">
+        <!-- Box Components -->
+        <div class="box">
+          <div class="box-header">
+            <h3>Meistä</h3>
+          </div>
+          <div class="box-content">
+            <p>Lue lisää meistä ja referensseistämme.</p>
+          </div>
+          <div class="box-footer">
+            <a href="/Meista">Lue lisää</a>
+          </div>
+        </div>
 
-<!-- Footer -->
-  <footer>
+        <div class="box">
+          <div class="box-header">
+            <h3>Yritys</h3>
+          </div>
+          <div class="box-content">
+            <p>Tutustu yritykseemme sekä henkilökuntaamme.</p>
+          </div>
+          <div class="box-footer">
+            <a href="/Yritys">Tutustu</a>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="box-header">
+            <h3>Palvelut</h3>
+          </div>
+          <div class="box-content">
+            <p>Kuinka voimme auttaa Sinua ja yritystoimintaasi tulevaisuuden suunnittelussa.</p>
+          </div>
+          <div class="box-footer">
+            <a href="/Palvelut">Katso tästä</a>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="box-header">
+            <h3>Koulutus</h3>
+          </div>
+          <div class="box-content">
+            <p>Monipuoliset ja monimuotoiset koulutukset räätälöity Sinun yritystarpeillesi.</p>
+          </div>
+          <div class="box-footer">
+            <a href="/Koulutus">Lue lisää</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
       <div class="footer-section contact">
-          <h4>Self-Help-You</h4>
-          <a href="/Otayhteytta" class="cta-btn">Ota yhteyttä</a>
-          <a href="/Sahkoposti" class="cta-btn">Sähköposti</a>
-          <a href="/Kanavat" class="cta-btn">Kanavat</a>
+        <h4>Self-Help-You - osana yrityksesi tulevaisuuden suunnittelua</h4>
+        <a href="#Otayhteytta">Ota yhteyttä</a>
+        <a href="#Sahkoposti">Sähköposti</a>
+        <a href="#Kanavat">Kanavat</a>
       </div>
       <div class="footer-bottom">
-          <p>&copy; 2025 Self-Help-You. Kaikki oikeudet pidätetään.</p>
+        <p>&copy; 2025 Self-Help-You. Kaikki oikeudet pidätetään.</p>
       </div>
-  </footer>
-<footer>
-  <div class="footer-section contact">
-    <h4>Self-Help-You - osana yrityksesi tulevaisuuden suunnittelua</h4>
-    <a href="#Otayhteytta">Ota yhteyttä</a>
-    <a href="#Sahkoposti">Sähköposti</a>
-    <a href="#Kanavat">Kanavat</a>
-    <span style="margin-left: 16px;">&copy; 2025 Self-Help-You. Kaikki oikeudet pidätetään.</span>
-  </div>
-</footer>
+    </footer>
 
-  <script>
+    <script>
       /* Function to toggle the navbar on small screens */
       function toggleNavbar() {
-          var navbar = document.getElementById("myNavbar");
-          navbar.classList.toggle("responsive");
+        var navbar = document.getElementById("myNavbar");
+        navbar.classList.toggle("responsive");
       }
-  </script>
-<script>
-  function toggleNavbar() {
-    var navbar = document.getElementById("myNavbar");
-    navbar.classList.toggle("responsive");
-  }
-</script>
+    </script>
+  </body>
+</html>
